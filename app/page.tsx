@@ -1,21 +1,20 @@
 "use client"
 import { useState } from 'react';
 
-export default function IdeaForm() {
-  const [idea, setIdea] = useState('');
+export default function Home() {
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const makeAPIcall = async () => {
+    await fetch ('/api/hello',{
+      method:'POST',
+      body:JSON.stringify({hello:'world'})
+    }
+    )
+  };  
     // Call the OpenAI API with the user's idea prompt
-  };
+
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Idea:
-        <input type="text" value={idea} onChange={(e) => setIdea(e.target.value)} />
-      </label>
-      <button type="submit">Submit</button>
-    </form>
+    
+      <button onClick={makeAPIcall}>Submit</button>
   );
 }

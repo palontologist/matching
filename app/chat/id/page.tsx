@@ -29,13 +29,9 @@ export async function generateMetadata({
 }
 
 export default async function ChatPage({ params }: ChatPageProps) {
-  const session = await auth()
 
-  if (!session?.user) {
-    redirect(`/sign-in?next=/chat/${params.id}`)
-  }
-
-  const chat = await getChat(params.id, session.user.id)
+  
+  const chat = await (params.id, session.user.id)
 
   if (!chat) {
     notFound()

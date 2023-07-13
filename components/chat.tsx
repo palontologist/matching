@@ -79,14 +79,10 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
             onChange={e => setPreviewTokenInput(e.target.value)}
           />
           <DialogFooter className="items-center">
-            <Button
-              onClick={() => {
-                setPreviewToken(previewTokenInput)
-                setPreviewTokenDialog(false)
-              }}
-            >
+            
+            
               Save Token
-            </Button>
+            
           </DialogFooter>
         </DialogContent>
       </Dialog>

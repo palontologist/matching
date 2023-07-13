@@ -2,24 +2,8 @@
 
 import { useChat, type Message } from 'ai/react'
 
-import { cn } from '@/lib/utils'
-import { ChatList } from '@/components/chat-list'
-import { ChatPanel } from '@/components/chat-panel'
-import { EmptyScreen } from '@/components/empty-screen'
-import { ChatScrollAnchor } from '@/components/chat-scroll-anchor'
-import { useLocalStorage } from '@/lib/hooks/use-local-storage'
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle
-} from '@/components/ui/dialog'
 import { useState } from 'react'
-import { Button } from './ui/button'
-import { Input } from './ui/input'
-import { toast } from 'react-hot-toast'
+
 
 const IS_PREVIEW = process.env.VERCEL_ENV === 'preview'
 export interface ChatProps extends React.ComponentProps<'div'> {

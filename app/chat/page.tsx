@@ -11,11 +11,13 @@ const openai = new OpenAIApi({
 const ChatPage = () => {
   const [messages, setMessages] = useState([])
 
+
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const formData = new FormData()
-    formData.append('message', e.target.elements.message.value)
+  const formData = new FormData()
+    formData.append('message', e.target.elements.message.textContent)
+
 
     const res = await openai.createChatCompletion({
       model: 'gpt-3.5-turbo',

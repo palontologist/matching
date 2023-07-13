@@ -1,5 +1,8 @@
+'use client'
+
 import { useState } from 'react'
 import { OpenAIApi } from 'openai'
+import { OpenAIStream } from 'ai'
 
 const openai = new OpenAIApi({
   apiKey: process.env.OPENAI_API_KEY

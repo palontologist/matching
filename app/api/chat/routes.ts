@@ -1,8 +1,9 @@
-import { OpenAIStream, StreamingTextResponse } from 'ai'
+import { OpenAIStream, StreamingTextResponse, nanoid } from 'ai'
 import { Configuration, OpenAIApi } from 'openai-edge'
 
 const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY
+  apiKey: process.env.OPENAI_API_KEY,
+  runtime: 'edge'
 })
 
 const openai = new OpenAIApi(configuration)
